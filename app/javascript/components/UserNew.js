@@ -12,6 +12,7 @@ const UserNew = ({ user }) => {
   const defaultPassword = password ? password : ""
   return (
     <>
+    <fieldset>
       <h1>Create new User</h1>
       <form action="/users" method="post">
         <div className="form-group">
@@ -60,6 +61,7 @@ const UserNew = ({ user }) => {
         </div>
         <button type="submit" className="btn btn-primary">Add User</button>
       </form>
+      </fieldset>
       <br />
       <a href="/users" className="btn btn-success">Back to Users</a>
     </>
