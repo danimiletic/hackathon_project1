@@ -1,31 +1,58 @@
 import React from 'react';
 
 const UserEdit = ({ user }) => {
+  const { first_name, last_name, email, password } = user 
+  const defaultFirstName = first_name ? first_name : ""
+  const defaultLastName = last_name ? last_name : ""
+  const defaultEmail = email ? email : ""
+  const defaultPassword = password ? password : ""
 
-
-  const { name, id } = user 
-
-  const defaultName = name ? name : ""
   return (
     <>
-      <h1>Create Edit User</h1>
+      <h1>Edit User</h1>
       <form action={`/users/${id}`} method="post">
         {}
         <input type='hidden' name='_method' value="patch" /> 
-        <div className="form-group">
-          <label>Name</label>
+       
+        
           <input
-            className="form-control col-md-6"
             type="text"
             placeholder="User name"
             required
-            defaultValue={defaultName}
-            name="user[name]"
+            defaultValue={defaultFirstName}
+            name="user[first_name]"
           />
-        </div>
-        <button type="submit" className="btn btn-primary">Update User</button>
+        
+         
+          <input
+            type="text"
+            placeholder="User last name"
+            required
+            defaultValue={defaultLastName}
+            name="user[last_name]"
+          />
+      
+         
+          <input
+            type="text"
+            placeholder="User Email"
+            required
+            defaultValue={defaultEmail}
+            name="user[email]"
+            />
+        
+         
+          <input
+            type="text"
+            placeholder="User password"
+            required
+            defaultValue={defaultPassword}
+            name="user[password]"
+            />
+    
+        <button type="submit" >Update User</button>
       </form>
-      <br />
+    
       <a href="/users" className="btn btn-success">Back to Users</a>
     </>
   )
