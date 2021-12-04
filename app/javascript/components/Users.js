@@ -11,6 +11,7 @@ import React from 'react';
 const Users = ({ users }) => {
   return (
     <>
+    
       <a href="/users/new">
         <button className="btn btn-dark">Add User</button>
       </a>
