@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all 
-    render componentL 'Users', props: { users: @users }
+    render component: 'Users', props: { users: @users }
   end
 
   def show
