@@ -19,6 +19,7 @@ const Users = ({ users }) => {
       <br />
       <ul class="list-group">
         { users.map( (user) => (
+          <fieldset>
           <li className="list-group-item">
             <h3>{user.first_name } {user.last_name }</h3>
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -32,6 +33,7 @@ const Users = ({ users }) => {
               </a>
             </div>
           </li>
+          </fieldset>
         )) }
       </ul>
       <br />
